@@ -1,0 +1,176 @@
+/* Higher Priority order of Color BG Color are inline styles (<class="..." style="...">) > external styles #id > .classes > h1,h2 */
+/* Use IDs very very sparingly try to use classes IDs are used in href=#id for navbar navigation carousels etc */
+body {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.big-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.3rem;
+  line-height: 1.5;
+  font-weight: 900;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* The feature section is h3 */
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+p {
+  color: #8f8f8f;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Navigation-Bar */
+.navbar {
+  padding: 0 0 4.5rem;
+  /* top :0 left right : 0 and bottom 4.5rem */
+}
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.nav-item {
+  padding: 0 19px;
+}
+
+/* Contact Pricing Download */
+.nav-link {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.container-fluid {
+  padding: 7% 15%;
+  /* 7% on & bottom 15% on left and right */
+}
+
+.colored-section {
+  background-color: #ff4c68;
+  color: #fff;
+  /* all text colors becomes white */
+}
+
+.white-section {
+  background-color: #ffff;
+}
+
+/* Download Buttons */
+/* download-button is a custom class to prevent modifying original bootstrap class name  */
+.download-button {
+  /*Spacing between the download buttons */
+  margin: 5% 3% 5% 0;
+}
+
+/* Use # for ids and. for classes in css */
+/* Combining selectors using container fluid for specific id overriding the prev containerfluid */
+/* IMPORTANT #id<space>.class */
+#title .container-fluid {
+  padding: 3% 15% 7%;
+  /* 3% on top 7% on bottom 15% on left and right */
+  text-align: left;
+  /* Overrides the center align for body */
+}
+
+/* Title Image (Rotation and size reduction) */
+.title-image {
+  width: 65%;
+  transform: rotate(25deg);
+  /* Remember IMP Rotates image by 25 degree */
+  position: absolute;
+  /* for z index position:  abs or relative is needed */
+  /* Consult the flowchart Stacking Order */
+  right: 20%;
+}
+
+/* Features Section*/
+#features {
+  /* The full row 7 percent space from top and bottom and 15% from either side to center it */
+  z-index: 1;
+  /* One below is on top when both positioned hence z index is optional here */
+  position: relative;
+}
+
+.feature-box {
+  padding: 5%;
+  /*text lines become shorter here with padding*/
+}
+
+/* The icons in features section checkcircle bullseye heart also add little spacing between icon and bottom text*/
+.icon {
+  color: #ef8172;
+  margin: 1rem;
+}
+
+/* For hover use .class:hover{color :#..} It's a pseudoclass*/
+.icon:hover {
+  color: #ff4c68;
+}
+
+/* Testimonials section */
+#testimonials {
+  background-color: #ef8172;
+  /* IMPORTANT BG color of #testimonials Overrides bg color of colored-section due to */
+  /* Hierarchy of id > class > h1/h2 */
+}
+
+.testimonial-image {
+  width: 15%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+/* Press section */
+#press {
+  background-color: #ef8172;
+  padding-bottom: 3%;
+  /* Padding so that the section doesn't suddenly come to an end */
+}
+
+.press-logo {
+  width: 15%;
+  margin: 20px 20px 50px;
+  /* Top Left & Right Bottom respectively */
+}
+
+/* Carousel Cards Pricing section */
+/* Combining selectors using container fluid for specific id overriding the prev containerfluid */
+/* IMPORTANT #id<space>.class */
+#pricing .container-fluid {
+  padding: 7% 11%;
+}
+
+.pricing-column {
+  padding: 3% 2.5%;
+}
+
+/* Call To Action Section */
+/* Footer Section */
+.social-media {
+  margin: 20px 10px;
+}
+
+/* Media Query breakpoint if true the the statements in {} are executed max width means anything lesser than given */
+/* Anything lesser than 1025px this will be implemented  */
+@media (max-width:1000px) {
+  #title {
+    text-align: center
+  }
+
+  .title-image {
+    position: static;
+    transform: rotate(0);
+  }
+}
